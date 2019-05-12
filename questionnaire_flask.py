@@ -93,6 +93,7 @@ def finished():
 def get_items(items_label):
     with open('program_data/{}.txt'.format(items_label.upper()), 'r') as items_file:
         items = items_file.readlines()
+        items = [repr(item)[1:-3] for item in items]
     items_dict = []
 
     i = 0
