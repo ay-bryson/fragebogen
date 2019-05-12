@@ -100,7 +100,7 @@ def get_items(items_label):
 
     for item in items:
         items_dict.append({'text': item,
-                           'label': items_label + '_' + str(i),
+                           'label': items_label + '_' + str(i + 1),
                            'required': is_required})
         i += 1
     return items_dict
