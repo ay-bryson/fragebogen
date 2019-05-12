@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Questionnaire</title>
+    <link rel="stylesheet" href="static/pure-min.css">
+    <link rel="stylesheet" href="static/main.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="title-container">
+            <h1>
+                {% block title %}{% endblock %}
+            </h1>
+        </div>
+        <div class="content-container">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <script src="static/tools.js"></script>
+</body>

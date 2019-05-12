@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+    <table class="pure-table items-table" id="bfi10-items-table">
+        <thead>
+            <tr>
+                <th>Inwieweit treffen die folgenden Aussagen auf Sie zu?</th>
+                <th>Trifft überhaupt nicht zu</th>
+                <th>Trifft eher nicht zu</th>
+                <th>Weder noch</th>
+                <th>Eher zutreffend</th>
+                <th>Trifft voll und ganz zu</th>
+            </tr>
+            <tr>
+                <th>Ich...</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.text }}</td>
+                <td><input name="{{ item.label }}" type="radio" value="0" {{ item.required }}></td>
+                <td><input name="{{ item.label }}" type="radio" value="1" {{ item.required }}></td>
+                <td><input name="{{ item.label }}" type="radio" value="2" {{ item.required }}></td>
+                <td><input name="{{ item.label }}" type="radio" value="3" {{ item.required }}></td>
+                <td><input name="{{ item.label }}" type="radio" value="4" {{ item.required }}></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="pure-button" type="submit" value="submit">
+        Submit
+    </button>
+</form>
+{% endblock %}

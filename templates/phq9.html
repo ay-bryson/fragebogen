@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST">
+    <table class="pure-table items-table" id="phq9-items-table">
+        <thead>
+            <tr>
+                <th>Wie oft fühlten Sie sich im Verlauf der letzten 2 Wochen durch die folgenden Beschwerden beeinträchtigt?</th>
+                <th>Überhaupt nicht</th>
+                <th>An einzelnen Tagen</th>
+                <th>An mehr als der Hälfte der Tage</th>
+                <th>Beinahe jeden Tag</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.text }}</td>
+                <td><input name="{{ item.label }}" type="radio" value="0" {{ item.required }}></td>
+                <td><input name="{{ item.label }}" type="radio" value="1" {{ item.required }}></td>
+                <td><input name="{{ item.label }}" type="radio" value="2" {{ item.required }}></td>
+                <td><input name="{{ item.label }}" type="radio" value="3" {{ item.required }}></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="pure-button" type="submit" value="submit">
+        Submit
+    </button>
+</form>
+{% endblock %}
