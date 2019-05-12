@@ -1,5 +1,3 @@
- # -*- coding: utf-8 -*-
-
 import os
 import json
 
@@ -72,15 +70,15 @@ def bfi10():
 
     elif request.method == 'POST':
         process_post_data(request.form)
-        return redirect(url_for('zma29'))
+        return redirect(url_for('empathy'))
 
 
-@app.route('/zma29', methods=['GET', 'POST'])
-def zma29():
+@app.route('/empathy', methods=['GET', 'POST'])
+def empathy():
     if request.method == 'GET':
         context = {}
-        context['items'] = get_items('zma29')
-        return render_template('zma29.html', **context)
+        context['items'] = get_items('empathy')
+        return render_template('empathy.html', **context)
 
     elif request.method == 'POST':
         process_post_data(request.form)
@@ -93,9 +91,8 @@ def finished():
 
 
 def get_items(items_label):
-    with open('program_data/{}.txt'.format(items_label.upper()), 'r') as items_file:
+    with open('program_data/{}.txt'.format(items_label.upper()), 'r', encoding='utf-8') as items_file:
         items = items_file.readlines()
-        items = [repr(item)[1:-3] for item in items]
     items_dict = []
 
     i = 0

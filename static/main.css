@@ -25,12 +25,12 @@
     margin: auto;
     padding: 50px;
 }
-/*
-.items-table {
-    width: 100%;
-}*/
 
 .limited-width-td {
     max-width: 500px;
 }
 
+.table-cell:hover {
+    text-align: left;
+    background-color: #e8e8e8;
+}

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+ class="table-cell" onclick="clickRadioButton(this)"{% extends 'base.html' %}
 
 {% block title %}
 Seite 3 von 4
@@ -29,11 +29,11 @@ Seite 3 von 4
             {% for item in items %}
             <tr>
                 <td>{{ item.text }}</td>
-                <td><input name="{{ item.label }}" type="radio" value="0" {{ item.required }}></td>
-                <td><input name="{{ item.label }}" type="radio" value="1" {{ item.required }}></td>
-                <td><input name="{{ item.label }}" type="radio" value="2" {{ item.required }}></td>
-                <td><input name="{{ item.label }}" type="radio" value="3" {{ item.required }}></td>
-                <td><input name="{{ item.label }}" type="radio" value="4" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="1" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="2" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="3" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="4" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="5" {{ item.required }}></td>
             </tr>
             {% endfor %}
         </tbody>

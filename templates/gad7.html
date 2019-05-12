@@ -9,7 +9,7 @@ Seite 1 von 4
     <table class="pure-table items-table" id="gad7-items-table">
         <thead>
             <tr>
-                <th>Wie oft fühlten Sie sich im Verlauf der letzten 2 Wochen durch die folgenden Beschwerden beeinträchtigt?</th>
+                <th>Wie oft fühlten Sie sich im Verlauf der <u>letzten 2 Wochen</u> durch die folgenden Beschwerden beeinträchtigt?</th>
                 <th>Überhaupt nicht</th>
                 <th>An einzelnen Tagen</th>
                 <th>An mehr als der Hälfte der Tage</th>
@@ -20,10 +20,10 @@ Seite 1 von 4
             {% for item in items %}
             <tr>
                 <td>{{ item.text }}</td>
-                <td><input name="{{ item.label }}" type="radio" value="0" {{ item.required }}></td>
-                <td><input name="{{ item.label }}" type="radio" value="1" {{ item.required }}></td>
-                <td><input name="{{ item.label }}" type="radio" value="2" {{ item.required }}></td>
-                <td><input name="{{ item.label }}" type="radio" value="3" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="0" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="1" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="2" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="3" {{ item.required }}></td>
             </tr>
             {% endfor %}
         </tbody>

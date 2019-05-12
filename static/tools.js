@@ -1,3 +1,7 @@
+function print(text) {
+    console.log(text);
+}
+
 function checkUserExists(usersList) {
     var inputBox = document.getElementById('participant-id');
     var warningCont = document.getElementById('warning-container')
@@ -21,4 +25,8 @@ function show(elemArray) {
     for (i = 0; i < elemArray.length; i++) {
         document.getElementById(elemArray[i]).removeAttribute('hidden')
     }
+}
+
+function clickRadioButton(clickedCell) {
+    clickedCell.childNodes[0].click();
 }

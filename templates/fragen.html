@@ -2,7 +2,7 @@
 
 {% block content %}
 <form method="post" class="pure-form">
-    <h2>Fragen zur Person</h2>
+    <h2 onclick="clickRadioButton(this)">Fragen zur Person</h2>
     <table class="pure-table no-borders">
         <tbody>
             <tr>
@@ -11,9 +11,9 @@
             </tr>
             <tr>
                 <td class="limited-width-td"><h4>Geschlecht:</h4></td>
-                <td><input type="radio" name="gender" value="1" required> weiblich</td>
-                <td><input type="radio" name="gender" value="2" required> männlich</td>
-                <td><input type="radio" name="gender" value="3" required> divers</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="gender" value="1" required> weiblich</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="gender" value="2" required> männlich</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="gender" value="3" required> divers</td>
             </tr>
             <tr>
                 <td class="limited-width-td"><h4>Alter:</h4></td>
@@ -34,18 +34,18 @@
         <tbody>
             <tr>
                 <td class="limited-width-td"><h4>Haben Sie die Vorlesung Klinische Psychologie und Psychotherapie I besucht?</h4></td>
-                <td><input type="radio" name="visited_lecture_1" value="0" required> Nein</td>
-                <td><input type="radio" name="visited_lecture_1" value="1" required> Ja</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="visited_lecture_1" value="0" required> Nein</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="visited_lecture_1" value="1" required> Ja</td>
             </tr>
             <tr>
                 <td class="limited-width-td"><h4>Haben Sie die Vorlesung Klinische Psychologie und Psychotherapie II besucht?</h4></td>
-                <td><input type="radio" name="visited_lecture_2" value="0" required> Nein</td>
-                <td><input type="radio" name="visited_lecture_2" value="1" required> Ja</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="visited_lecture_2" value="0" required> Nein</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="visited_lecture_2" value="1" required> Ja</td>
             </tr>
             <tr>
                 <td class="limited-width-td"><h4>Haben Sie bereits ein Praktikum an einer psychotherapeutischen/psychiatrischen Einrichtung absolviert, z.B. in der Ambulanz oder Reha?</h4></td>
-                <td><input type="radio" name="internship" value="0" onclick="hide(['internship-row1', 'internship-row2'])" required> Nein</td>
-                <td><input type="radio" name="internship" value="1" onclick="show(['internship-row1', 'internship-row2'])"required> Ja</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="internship" value="0" onclick="hide(['internship-row1', 'internship-row2'])" required> Nein</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="internship" value="1" onclick="show(['internship-row1', 'internship-row2'])"required> Ja</td>
             </tr>
             <tr id="internship-row1" hidden>
                 <td><h4>Wie viele Monate?</h4></td>
@@ -57,13 +57,13 @@
             </tr>
             <tr>
                 <td class="limited-width-td"><h4>Hatten Sie bereits Kontakt zu PatientInnen mit psychischen Störungen?</h4></td>
-                <td><input type="radio" name="patient_experience" value="0" required> Nein</td>
-                <td><input type="radio" name="patient_experience" value="1" required> Ja</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="patient_experience" value="0" required> Nein</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="patient_experience" value="1" required> Ja</td>
             </tr>
                         <tr>
                 <td class="limited-width-td"><h4>Haben Sie bereits als RollenspielpartnerIn fungiert?</h4></td>
-                <td><input type="radio" name="roleplaying_experience" value="0" onclick="hide(['roleplaying-experience-row'])" required> Nein</td>
-                <td><input type="radio" name="roleplaying_experience" value="1" onclick="show(['roleplaying-experience-row'])"required> Ja</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="roleplaying_experience" value="0" onclick="hide(['roleplaying-experience-row'])" required> Nein</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="roleplaying_experience" value="1" onclick="show(['roleplaying-experience-row'])"required> Ja</td>
             </tr>
             <tr id="roleplaying-experience-row" hidden>
                 <td><h4>In welchem Kontext?</h4></td>
@@ -71,8 +71,8 @@
             </tr>
             <tr>
                 <td class="limited-width-td"><h4>Haben Sie bereits Schauspielrrfahrung gesammelt?</h4></td>
-                <td><input type="radio" name="acting_experience" value="0" onclick="hide(['acting-experience-row'])" required> Nein</td>
-                <td><input type="radio" name="acting_experience" value="1" onclick="show(['acting-experience-row'])" required> Ja</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="acting_experience" value="0" onclick="hide(['acting-experience-row'])" required> Nein</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="acting_experience" value="1" onclick="show(['acting-experience-row'])" required> Ja</td>
             </tr>
             <tr id="acting-experience-row" hidden>
                 <td><h4>In welchem Kontext?</h4></td>
@@ -80,8 +80,8 @@
             </tr>
                         <tr>
                 <td class="limited-width-td"><h4>Haben Sie bereits Vorerfahrungen mit Psychotherapie, z.B. als PatientIn, in der Familie, etc.?</h4></td>
-                <td><input type="radio" name="psychotherapy_experience" value="0" required> Nein</td>
-                <td><input type="radio" name="psychotherapy_experience" value="1" required> Ja</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="psychotherapy_experience" value="0" required> Nein</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input type="radio" name="psychotherapy_experience" value="1" required> Ja</td>
             </tr>
         </tbody>
     </table>
