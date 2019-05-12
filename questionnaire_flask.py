@@ -22,15 +22,19 @@ def start():
 
     elif request.method == 'POST':
         initiate_user(request.form)
-        return redirect(url_for('gad7'))
+        return redirect(url_for('fragen'))
 
 
 @app.route('/fragen', methods=['GET', 'POST'])
-def user_qs():
+def fragen():
     if request.method == 'GET':
-        return render_template('user_qs.html', **context)
+        context = {}
+        context['participant_id'] = get_participant_id()
+        return render_template('fragen.html', **context)
 
     elif request.method == 'POST':
+        process_post_data(request.form)
+        return redirect(url_for('gad7'))
 
 
 @app.route('/gad7', methods=['GET', 'POST'])
@@ -128,7 +132,7 @@ def get_participant_id():
         return current_user_file.read()
 
 
-DEV_MODE = True
+DEV_MODE = False
 
 
 if __name__ == '__main__':

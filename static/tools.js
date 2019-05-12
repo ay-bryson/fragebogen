@@ -10,3 +10,15 @@ function checkUserExists(usersList) {
         submitElem.removeAttribute('disabled')
     }
 }
+
+function hide(elemArray) {
+    for (i = 0; i < elemArray.length; i++) {
+        document.getElementById(elemArray[i]).setAttribute('hidden', '')
+    }
+}
+
+function show(elemArray) {
+    for (i = 0; i < elemArray.length; i++) {
+        document.getElementById(elemArray[i]).removeAttribute('hidden')
+    }
+}
