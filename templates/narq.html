@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Seite 4 von 5
+{% endblock %}
+
+{% block content %}
+<form method="POST">
+    <table class="pure-table items-table" id="phq9-items-table">
+        <thead>
+            <tr>
+                <th>Beurteilen Sie bitte, wie sehr die folgenden Aussagen auf Sie zutreffen.</th>
+                <th>Trifft überhaupt nicht zu</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>Trifft vollkommen zu</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.text }}</td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="1" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="2" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="3" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="4" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="5" {{ item.required }}></td>
+                <td class="table-cell" onclick="clickRadioButton(this)"><input name="{{ item.label }}" type="radio" value="6" {{ item.required }}></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button class="pure-button" type="submit" value="submit">
+        Submit
+    </button>
+</form>
+{% endblock %}
