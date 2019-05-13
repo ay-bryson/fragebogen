@@ -70,6 +70,18 @@ def bfi10():
 
     elif request.method == 'POST':
         process_post_data(request.form)
+        return redirect(url_for('narq'))
+
+
+@app.route('/narq', methods=['GET', 'POST'])
+def narq():
+    if request.method == 'GET':
+        context = {}
+        context['items'] = get_items('narq')
+        return render_template('narq.html', **context)
+
+    elif request.method == 'POST':
+        process_post_data(request.form)
         return redirect(url_for('empathy'))
 
 

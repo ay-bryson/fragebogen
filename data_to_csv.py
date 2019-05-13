@@ -41,7 +41,7 @@ with open('questionnaire.csv'.format(user), 'w') as user_file:
         with open('user_data/{}'.format(user), 'r') as user_file:
             user_data = json.load(user_file)
         try:
-            assert len(user_data.keys()) == 70
+            assert len(user_data.keys()) == 76
             assert user != 'current_user.txt'
         except AssertionError:
             print('Error with user {}. Check the data. Continuing anyway...'.format(user))
